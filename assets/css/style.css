@@ -1,0 +1,48 @@
+html{
+    font-size: 16px;
+}
+body{
+    margin: 0;
+}
+section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(35deg, #3b3b3b 0%, #c0c0c0 50%);
+}
+article{
+    width: 450px;
+    background: rgb(252, 245, 238);
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 10px;
+}
+h1{
+    text-align: center;
+    font-size: 2rem;
+}
+input{
+    margin: 5px 0;
+}
+input:nth-of-type(1){
+    width: 440px;
+}
+input:nth-of-type(2){
+    width: 40px;
+}
+input:last-of-type{
+    margin: 15px 0;
+}
+label:nth-of-type(1){
+    display: block;
+}
+label:nth-of-type(2){
+    display: block;
+}
+h3{
+    margin: 0;
+}
+#result{
+    height: 50px;
+}

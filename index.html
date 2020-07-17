@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <section>
+        <article>
+            <h1>Caesar-Cipher</h1>
+            <form action="">
+                <label for="">Eingabe:</label>
+                <input type="text" name="" id="input">
+                <label for="">Schlüssel:</label>
+                <input type="number" name="" id="key">
+                <br>
+                <input type="radio" name="aktion" id="code" checked>
+                <label for="">Verschlüsseln:</label>
+                <br>
+                <input type="radio" name="aktion" id="decode">
+                <label for="">Entschlüsseln:</label>
+                <br>
+                <input type="button" value="Ave" onclick="encrypt()">
+            </form>
+            <div>
+                <h3>Ergebniss:</h3>
+                <p id="result"></p>
+            </div>
+        </article>
+    </section>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
