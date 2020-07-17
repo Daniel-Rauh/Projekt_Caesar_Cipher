@@ -5,9 +5,11 @@ const encode = document.getElementById("code")
 const output = document.getElementById("result")
 let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 function encrypt() {
+    let resultArr = []
     let encodeAlphabet = []
     let result = ""
-    let text = input.value
+    let text = input.value.toLowerCase().split("")
+    console.log(text)
     if (encode.checked) {
         for (let i = 0; i < alphabet.length; i++) {
             if ((i + +key.value < alphabet.length)) {
@@ -16,6 +18,7 @@ function encrypt() {
                 encodeAlphabet.push(alphabet[(i - 26) + +key.value])
             }
         }
+        console.log(encodeAlphabet)
     } else {
         for (let i = 0; i < alphabet.length; i++) {
             if (i - +key.value < 0) {
@@ -24,15 +27,29 @@ function encrypt() {
                 encodeAlphabet.push(alphabet[i - +key.value])
             }
         }
+        console.log(encodeAlphabet)
     }
     if (encode.checked) {
-        for (i of text.toLowerCase()) {
-            result += encodeAlphabet[alphabet.indexOf(i)].toUpperCase()
+        for (i = 0; i < text.length; i++) {
+            console.log(alphabet.indexOf(text[i]))
+            
+            if (alphabet.indexOf(text[i]) < 0 && text[i] == " ") {
+                resultArr.push(' ')
+            } else {
+                resultArr.push(encodeAlphabet[alphabet.indexOf(text[i])])
+            }
         }
+        output.innerHTML = resultArr.join("").toUpperCase()
     } else {
-        for (i of text.toLowerCase()) {
-            result += encodeAlphabet[alphabet.indexOf(i)].toLowerCase()
+        for (i = 0; i < text.length; i++) {
+            console.log(alphabet.indexOf(text[i]))
+            
+            if (alphabet.indexOf(text[i]) < 0 && text[i] == " ") {
+                resultArr.push(' ')
+            } else {
+                resultArr.push(encodeAlphabet[alphabet.indexOf(text[i])])
+            }
         }
-    }
-    output.innerHTML = result
+        output.innerHTML = resultArr.join("").toLowerCase()
+        }
 }
