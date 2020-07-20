@@ -9,7 +9,6 @@ function encrypt() {
     let encodeAlphabet = []
     let result = ""
     let text = input.value.toLowerCase().split("")
-    console.log(text)
     if (encode.checked) {
         for (let i = 0; i < alphabet.length; i++) {
             if ((i + +key.value < alphabet.length)) {
@@ -18,7 +17,6 @@ function encrypt() {
                 encodeAlphabet.push(alphabet[(i - 26) + +key.value])
             }
         }
-        console.log(encodeAlphabet)
     } else {
         for (let i = 0; i < alphabet.length; i++) {
             if (i - +key.value < 0) {
@@ -27,12 +25,9 @@ function encrypt() {
                 encodeAlphabet.push(alphabet[i - +key.value])
             }
         }
-        console.log(encodeAlphabet)
     }
     if (encode.checked) {
         for (i = 0; i < text.length; i++) {
-            console.log(alphabet.indexOf(text[i]))
-            
             if (alphabet.indexOf(text[i]) < 0 && text[i] == " ") {
                 resultArr.push(' ')
             } else {
@@ -42,8 +37,6 @@ function encrypt() {
         output.innerHTML = resultArr.join("").toUpperCase()
     } else {
         for (i = 0; i < text.length; i++) {
-            console.log(alphabet.indexOf(text[i]))
-            
             if (alphabet.indexOf(text[i]) < 0 && text[i] == " ") {
                 resultArr.push(' ')
             } else {
